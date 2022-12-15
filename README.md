@@ -1,5 +1,11 @@
 # Sql Instructor
 - RDBMS <sub>Relational Database Management System</sub>
+## MySQL/MariaDB
+- Config
+  - Ubuntu
+    - `mysql_secure_installation`
+- Command Line
+  - `mysql -u root -p`
 ## Headings
 - SQL <sub>Structured Query Language</sub> Command Categories
   - DQL <sub>Data Query Language</sub>
