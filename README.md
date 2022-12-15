@@ -20,6 +20,8 @@
       - `use DATABASE_NAME;`
   - Source
     - `source SQL_FILE.sql`
+  - Run SQL
+    - `mysql -u USERNAME -p PASSWORD DATABASE_NAME < FILENAME.sql`
 ---
 - SQL <sub>Structured Query Language</sub> Command Categories
   - DQL <sub>Data Query Language</sub>
@@ -33,7 +35,7 @@
     - `CALL`
   - DDL <sub>Data Definition Language</sub>
     - `CREATE`
-      - `TABLE`
+      - [`TABLE`](/concepts/ddl/create_table.sql)
       - `DATABASE`
     - `DROP`
       - `TABLE`
