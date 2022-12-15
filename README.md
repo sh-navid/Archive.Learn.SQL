@@ -10,10 +10,14 @@
     - UPDATE
     - DELETE
   - DDL <sub>Data Definition Language</sub>
+    - CREATE
+    - DROP
+    - ALTER
+    - TRUNCATE
   - DCL <sub>Data Control Language</sub>
     - GRANT
     - REVOKE
-  - TCL
+  - TCL <sub>Transaction Control Language</sub>
   - Alias
   - Group By
   - Order By
