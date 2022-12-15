@@ -13,6 +13,10 @@
     - `CREATE`
     - `DROP`
     - `ALTER`
+      - TABLE
+        - ADD
+        - REMOVE
+        - MODIFY
     - `TRUNCATE`
     - `VIEW`
       - VIEW
