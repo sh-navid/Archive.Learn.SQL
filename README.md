@@ -3,12 +3,13 @@
 - SQL <sub>Structured Query Language</sub> Command Categories
   - DQL <sub>Data Query Language</sub>
       - `SELECT`
-        - `*`
-        - `Column`
+        - `*`, `COLUMN`
   - DML <sub>Data Manipulation Language</sub>
     - `INSERT`
     - `UPDATE`
     - `DELETE`
+    - `LOCK`
+    - `CALL`
   - DDL <sub>Data Definition Language</sub>
     - `CREATE`
     - `DROP`
@@ -28,6 +29,8 @@
       - VIEW
       - TABLE
       - DATABASE
+    - `COMMENT`
+    - `RENAME`
   - DCL <sub>Data Control Language</sub>
     - `GRANT`
     - `REVOKE`
