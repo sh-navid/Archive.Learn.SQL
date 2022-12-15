@@ -89,13 +89,20 @@
 ---
 - DataTypes
 - Keys
+    - Primary Key
+    - Super Key
+    - Candidate Key
+    - Alternate Key
+    - Foreign Key
+    - Composite Key
+    - Unique Key
 - Constraints
-  - Unique
-  - Not Null
-  - Primary Key
-  - Foreign Key
-  - Check
-  - Default
+  - `Unique`
+  - `Not Null`
+  - `Primary Key`
+  - `Foreign Key`
+  - `Check`
+  - `Default`
 ---
 - Normalization
   - NF
