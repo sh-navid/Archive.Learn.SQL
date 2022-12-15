@@ -35,6 +35,7 @@
     - `COMMIT`
     - `ROLLBACK`
     - `SAVEPOINT`
+  ---
   - Alias
     - `AS`
   - Group By
@@ -63,9 +64,11 @@
   - Functions
     - Math
     - Window
+---
 - DataTypes
 - Keys
 - Constraints
+---
 - Normalization
   - NF
   - 2NF
