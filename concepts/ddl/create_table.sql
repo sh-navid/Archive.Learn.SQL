@@ -1,0 +1,6 @@
+CREATE TABLE Books(
+    ID      INTEGER         NOT NULL    UNIQUE,
+    TITLE   VARCHAR(100)    NOT NULL,
+
+    PRIMARY KEY (ID)
+);
