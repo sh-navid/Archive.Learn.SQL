@@ -7,6 +7,13 @@
 - Command Line
   - `mysql -u root -p`
 ## Headings
+- Command Line
+  - Show
+    - Databases
+    - Tables
+  - Use
+    - Database
+---
 - SQL <sub>Structured Query Language</sub> Command Categories
   - DQL <sub>Data Query Language</sub>
       - `SELECT`
