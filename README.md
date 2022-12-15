@@ -1,4 +1,5 @@
 # Sql Instructor
+- RDBMS <sub>Relational Database Management System</sub>
 ## Headings
 - SQL <sub>Structured Query Language</sub> Command Categories
   - DQL <sub>Data Query Language</sub>
@@ -64,8 +65,19 @@
     - `AND`
     - `OR`
     - `NOT`
+    - `NULL`
+  - IF
+  - EXISTS
+  - DISTINCT
+  - LIMIT
   - Functions
     - Math
+      - `min`, `avg`, `max`, `count`, `sum`, `mod`, `ceil`, `round`, `abs`, `floor`, `sign`
+    - String
+      - `concat`, `trim`, `upper`, `lower`, `length`
+    - Other
+      - `least`, `greatest`
+    - Date
     - Window
 ---
 - DataTypes
