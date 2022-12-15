@@ -15,14 +15,14 @@
     - `ALTER`
       - TABLE
         - `ADD`
-          - COLUMN
-          - CONSTRAINT
+          - `COLUMN`
+          - `CONSTRAINT`
         - `REMOVE`
-          - COLUMN
-          - CONSTRAINT
+          - `COLUMN`
+          - `CONSTRAINT`
         - `MODIFY`
-          - DATATYPE
-          - DATATYPE Length
+          - `DATATYPE`
+          - `DATATYPE Length`
     - `TRUNCATE`
     - `VIEW`
       - VIEW
