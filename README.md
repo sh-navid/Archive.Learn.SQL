@@ -38,7 +38,12 @@
   - Alias
     - `AS`
   - Group By
+    - `COLUMN`
+    - `HAVING`
   - Order By
+    - `COLUMN`
+      - `ASC`
+      - `DESC`
   - Join
   - Where
     - `>, <, =, <=, >=, <>`
@@ -53,7 +58,7 @@
     - `NOT`
   - Functions
     - Math
-    - Where
+    - Window
 - DataTypes
 - Keys
 - Constraints
