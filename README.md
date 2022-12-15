@@ -2,10 +2,23 @@
 ## Headings
 - SQL
   - DML
+    - SELECT
+      - *
+      - Column
+    - INSERT
+    - UPDATE
+    - DELETE
   - DDL
   - DCL
   - TCL
-  - 
+  - Alias
+  - Group By
+  - Order By
+  - Join
+  - Where
+  - Functions
+    - Math
+    - Where
 - Normalization
   - NF
   - 2NF
