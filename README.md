@@ -1,6 +1,6 @@
 # Sql Instructor
 ## Headings
-- SQL <sub>Structured Query Language</sub>
+- SQL <sub>Structured Query Language</sub> Command Categories
   - DML
     - SELECT
       - `*`
@@ -8,7 +8,7 @@
     - INSERT
     - UPDATE
     - DELETE
-  - DDL
+  - DDL <sub>Data Definition Language</sub>
   - DCL
   - TCL
   - Alias
