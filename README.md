@@ -1,10 +1,11 @@
 # Sql Instructor
 ## Headings
 - SQL <sub>Structured Query Language</sub> Command Categories
+  - DQL <sub>Data Query Language</sub>
+      - SELECT
+        - `*`
+        - `Column`
   - DML
-    - SELECT
-      - `*`
-      - `Column`
     - INSERT
     - UPDATE
     - DELETE
