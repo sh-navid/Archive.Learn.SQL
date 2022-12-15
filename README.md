@@ -2,30 +2,44 @@
 ## Headings
 - SQL <sub>Structured Query Language</sub> Command Categories
   - DQL <sub>Data Query Language</sub>
-      - SELECT
+      - `SELECT`
         - `*`
         - `Column`
   - DML <sub>Data Manipulation Language</sub>
-    - INSERT
-    - UPDATE
-    - DELETE
+    - `INSERT`
+    - `UPDATE`
+    - `DELETE`
   - DDL <sub>Data Definition Language</sub>
-    - CREATE
-    - DROP
-    - ALTER
-    - TRUNCATE
+    - `CREATE`
+    - `DROP`
+    - `ALTER`
+    - `TRUNCATE`
   - DCL <sub>Data Control Language</sub>
-    - GRANT
-    - REVOKE
+    - `GRANT`
+    - `REVOKE`
   - TCL <sub>Transaction Control Language</sub>
+    - `COMMIT`
+    - `ROLLBACK`
+    - `SAVEPOINT`
   - Alias
   - Group By
   - Order By
   - Join
   - Where
+   - `>, <, =, <=, >=, <>`
+   - `EXISTS`
+   - `IN`
+   - `ANY`
+   - `ALL`
+   - `LIKE`
+   - `BETWEEN`
+   - `AND`
+   - `OR`
+   - `NOT`
   - Functions
     - Math
     - Where
+- Keys
 - Normalization
   - NF
   - 2NF
