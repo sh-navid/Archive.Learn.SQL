@@ -1,10 +1,10 @@
 # Sql Instructor
 ## Headings
-- SQL
+- SQL <sub>Structured Query Language</sub>
   - DML
     - SELECT
-      - *
-      - Column
+      - `*`
+      - `Column`
     - INSERT
     - UPDATE
     - DELETE
