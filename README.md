@@ -22,20 +22,21 @@
     - `ROLLBACK`
     - `SAVEPOINT`
   - Alias
+    - AS
   - Group By
   - Order By
   - Join
   - Where
-   - `>, <, =, <=, >=, <>`
-   - `EXISTS`
-   - `IN`
-   - `ANY`
-   - `ALL`
-   - `LIKE`
-   - `BETWEEN`
-   - `AND`
-   - `OR`
-   - `NOT`
+    - `>, <, =, <=, >=, <>`
+    - `EXISTS`
+    - `IN`
+    - `ANY`
+    - `ALL`
+    - `LIKE`
+    - `BETWEEN`
+    - `AND`
+    - `OR`
+    - `NOT`
   - Functions
     - Math
     - Where
