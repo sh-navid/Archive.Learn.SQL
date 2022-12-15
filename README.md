@@ -14,6 +14,10 @@
     - `DROP`
     - `ALTER`
     - `TRUNCATE`
+    - `VIEW`
+      - VIEW
+      - TABLE
+      - DATABASE
   - DCL <sub>Data Control Language</sub>
     - `GRANT`
     - `REVOKE`
@@ -22,7 +26,7 @@
     - `ROLLBACK`
     - `SAVEPOINT`
   - Alias
-    - AS
+    - `AS`
   - Group By
   - Order By
   - Join
