@@ -14,9 +14,15 @@
     - `DROP`
     - `ALTER`
       - TABLE
-        - ADD
-        - REMOVE
-        - MODIFY
+        - `ADD`
+          - COLUMN
+          - CONSTRAINT
+        - `REMOVE`
+          - COLUMN
+          - CONSTRAINT
+        - `MODIFY`
+          - DATATYPE
+          - DATATYPE Length
     - `TRUNCATE`
     - `VIEW`
       - VIEW
@@ -48,7 +54,9 @@
   - Functions
     - Math
     - Where
+- DataTypes
 - Keys
+- Constraints
 - Normalization
   - NF
   - 2NF
