@@ -18,6 +18,8 @@
   - Use
     - Database
       - `use DATABASE_NAME;`
+  - Source
+    - `source SQL_FILE.sql`
 ---
 - SQL <sub>Structured Query Language</sub> Command Categories
   - DQL <sub>Data Query Language</sub>
@@ -127,3 +129,6 @@
   - 2NF
   - 3NF
   - BCNF
+---
+- Trigger
+- Procedure
