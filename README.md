@@ -10,9 +10,14 @@
 - Command Line
   - Show
     - Databases
+      - `show databases;`
     - Tables
+  - Create
+    - Database
+      - `create database DATABASE_NAME;`
   - Use
     - Database
+      - `use DATABASE_NAME;`
 ---
 - SQL <sub>Structured Query Language</sub> Command Categories
   - DQL <sub>Data Query Language</sub>
