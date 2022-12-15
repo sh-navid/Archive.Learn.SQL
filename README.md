@@ -22,6 +22,7 @@
     - `source SQL_FILE.sql`
   - Run SQL
     - `mysql -u USERNAME -p PASSWORD DATABASE_NAME < FILENAME.sql`
+    >> Seems that not working like this on ubuntu
 ---
 - SQL <sub>Structured Query Language</sub> Command Categories
   - DQL <sub>Data Query Language</sub>
