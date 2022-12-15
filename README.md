@@ -13,9 +13,13 @@
     - `CALL`
   - DDL <sub>Data Definition Language</sub>
     - `CREATE`
+      - `TABLE`
+      - `DATABASE`
     - `DROP`
+      - `TABLE`
+      - `DATABASE`
     - `ALTER`
-      - TABLE
+      - `TABLE`
         - `ADD`
           - `COLUMN`
           - `CONSTRAINT`
@@ -26,10 +30,11 @@
           - `DATATYPE`
           - `DATATYPE Length`
     - `TRUNCATE`
+      - `TABLE`
     - `VIEW`
-      - VIEW
-      - TABLE
-      - DATABASE
+      - `VIEW`
+      - `TABLE`
+      - `DATABASE`
     - `COMMENT`
     - `RENAME`
   - DCL <sub>Data Control Language</sub>
@@ -80,10 +85,17 @@
     - Date
       - `date_trunc`, `extract`
     - Window
+      - `lag`, `lead`, `ntile`, `rank`, `dense_rank`, `row_number`, `over`
 ---
 - DataTypes
 - Keys
 - Constraints
+  - Unique
+  - Not Null
+  - Primary Key
+  - Foreign Key
+  - Check
+  - Default
 ---
 - Normalization
   - NF
