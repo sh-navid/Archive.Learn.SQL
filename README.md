@@ -78,6 +78,7 @@
     - Other
       - `least`, `greatest`
     - Date
+      - `date_trunc`, `extract`
     - Window
 ---
 - DataTypes
