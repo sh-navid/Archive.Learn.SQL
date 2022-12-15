@@ -45,6 +45,10 @@
       - `ASC`
       - `DESC`
   - Join
+    - `INNER`
+    - `LEFT`
+    - `RIGHT`
+    - `FULL`
   - Where
     - `>, <, =, <=, >=, <>`
     - `EXISTS`
