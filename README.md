@@ -5,12 +5,14 @@
       - SELECT
         - `*`
         - `Column`
-  - DML
+  - DML <sub>Data Manipulation Language</sub>
     - INSERT
     - UPDATE
     - DELETE
   - DDL <sub>Data Definition Language</sub>
-  - DCL
+  - DCL <sub>Data Control Language</sub>
+    - GRANT
+    - REVOKE
   - TCL
   - Alias
   - Group By
