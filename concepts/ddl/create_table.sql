@@ -157,7 +157,7 @@ BEGIN
     SELECT count(*)
     FROM BookSize;
 END;
-CALL count_books();
+-- CALL count_books();
 
 
 DROP PROCEDURE IF EXISTS get_book_by_id;
@@ -173,8 +173,8 @@ BEGIN
         WHERE ID=book_id;
     END IF;
 END;
-CALL get_book_by_id(1);
-CALL get_book_by_id(4);
+-- CALL get_book_by_id(1);
+-- CALL get_book_by_id(4);
 
 
 DROP PROCEDURE IF EXISTS check_books_count;
@@ -191,12 +191,24 @@ BEGIN
         SELECT * FROM BookSize;
     END IF;
 END;
-CALL check_books_count(2);
+-- CALL check_books_count(2);
 
 
 -- --------------------------------------------------------------------------
 -- SELECT IN SELECT                                                        --
 -- --------------------------------------------------------------------------
+
+SELECT * FROM (SELECT * FROM Books) AS B;
+
+SELECT Title FROM (SELECT * FROM Books) AS B;
+
+SELECT Title FROM (SELECT * FROM Books) AS B WHERE ID<4;
+
+SELECT Title FROM (SELECT * FROM Books) AS B WHERE ID IN (SELECT ID FROM Books WHERE Publisher_ID=1);
+
+SELECT B.Title FROM (SELECT * FROM Books) AS B WHERE ID IN (SELECT ID FROM Books WHERE Publisher_ID=1);
+
+SELECT B.Title FROM (SELECT * FROM Books) AS B WHERE ID IN (SELECT ID FROM Books WHERE Publisher_ID IN (SELECT ID as Publisher_ID FROM Publishers WHERE Name='alireza'));
 
 -- --------------------------------------------------------------------------
 -- GROUP BY - HAVING                                                       --
