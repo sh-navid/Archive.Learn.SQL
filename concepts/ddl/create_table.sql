@@ -88,7 +88,7 @@ INSERT INTO Books  (ID, Title, ISBN, Published_Date, Publisher_ID, BookType_ID, 
 INSERT INTO Books  (ID, Title, ISBN, Published_Date, Publisher_ID, BookType_ID, BookSize_ID)    VALUES (NULL, "Book4", 1000000004, "2022-10-09", NULL,  2,      3);
 INSERT INTO Books  (ID, Title, ISBN, Published_Date, Publisher_ID, BookType_ID, BookSize_ID)    VALUES (NULL, "Book5", 1000000005, now(),        1,     2,      2);
 INSERT INTO Books  (ID, Title, ISBN, Published_Date, Publisher_ID, BookType_ID, BookSize_ID)    VALUES (NULL, "Book6", 1000000006, now(),        50,    NULL,   3);
-INSERT INTO Books  (ID, Title, ISBN, Published_Date, Publisher_ID, BookType_ID, BookSize_ID)    VALUES (NULL, "Book7", 1000000007, NULL,         51,    2,      1);
+INSERT INTO Books  (ID, Title, ISBN, Published_Date, Publisher_ID, BookType_ID, BookSize_ID)    VALUES (NULL, "Book7", 1000000007, "2022-10-09", 51,    2,      1);
 INSERT INTO Books  (ID, Title, ISBN, Published_Date, Publisher_ID, BookType_ID, BookSize_ID)    VALUES (NULL, "Book8", 1000000008, now(),        NULL,  NULL,   NULL);
 
 -- SELECT * FROM Books;
@@ -213,3 +213,11 @@ SELECT B.Title FROM (SELECT * FROM Books) AS B WHERE ID IN (SELECT ID FROM Books
 -- --------------------------------------------------------------------------
 -- GROUP BY - HAVING                                                       --
 -- --------------------------------------------------------------------------
+
+SELECT Published_Date FROM Books GROUP BY Published_Date;
+
+SELECT Publisher_ID FROM Books GROUP BY Publisher_ID;
+
+SELECT count(*), Published_Date FROM Books GROUP BY Published_Date;
+
+SELECT count(*) AS Published_Books, Published_Date FROM Books GROUP BY Published_Date HAVING Published_Books>=2;
