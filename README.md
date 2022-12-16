@@ -40,7 +40,9 @@
       - `DATABASE`
     - `DROP`
       - `TABLE`
+        - `DROP TABLE <TABLE_NAME>;`
       - `DATABASE`
+        - `DROP DATABASE <DATABASE_NAME>;`
     - `ALTER`
       - `TABLE`
         - `ADD`
@@ -110,6 +112,8 @@
     - Window
       - `lag`, `lead`, `ntile`, `rank`, `dense_rank`, `row_number`, `over`
 ---
+- Comment
+  - `-- This is my comment`
 - DataTypes
 - Keys
     - Primary Key
