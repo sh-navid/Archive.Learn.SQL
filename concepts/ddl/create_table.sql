@@ -38,9 +38,9 @@ CREATE TABLE IF NOT EXISTS Books(
     Title           VARCHAR(100)    NOT NULL,
     ISBN            INTEGER         NOT NULL    UNIQUE,
     Published_Date  DATE                NULL,
-    Publisher_ID    INTEGER         NOT NULL,
-    BookType_ID     INTEGER         NOT NULL,
-    BookSize_ID     INTEGER         NOT NULL,
+    Publisher_ID    INTEGER             NULL,
+    BookType_ID     INTEGER             NULL,
+    BookSize_ID     INTEGER             NULL,
     Abstraction     VARCHAR(100)        NULL    DEFAULT     "No Value",
 
     PRIMARY KEY (ID),
@@ -98,10 +98,10 @@ INSERT INTO Books  (ID, Title, ISBN, Published_Date, Publisher_ID, BookType_ID, 
 -- INNER JOIN                                                              --
 -- --------------------------------------------------------------------------
 
-SELECT Books.Title, Publishers.Name 
-FROM Books
-INNER JOIN Publishers
-ON Books.Publisher_ID = Publishers.ID;
+-- SELECT Books.Title, Publishers.Name 
+-- FROM Books
+-- INNER JOIN Publishers
+-- ON Books.Publisher_ID = Publishers.ID;
 
 -- SELECT Books.Title, Publishers.Name 
 -- FROM Books
@@ -124,3 +124,23 @@ ON Books.Publisher_ID = Publishers.ID;
 -- FROM Books
 -- RIGHT JOIN Publishers
 -- ON Books.Publisher_ID = Publishers.ID;
+
+
+
+
+DROP PROCEDURE IF EXISTS count_books;
+
+CREATE PROCEDURE count_books (IN B_ID INT) 
+BEGIN
+
+DECLARE C INT DEFAULT 0;
+
+SELECT count(*) INTO C 
+FROM BookSize;
+
+END;
+
+CALL count_books(2);
+
+SELECT count(*) INTO C 
+FROM BookSize;
