@@ -136,6 +136,18 @@ INSERT INTO Books  (ID, Title, ISBN, Published_Date, Publisher_ID, BookType_ID, 
 
 
 
+
+SELECT Books.Title as Title, Publishers.Name as Pub, BookSize.Title as Size, BookTypes.title as Type
+FROM Books
+LEFT JOIN Publishers
+ON Books.Publisher_ID = Publishers.ID
+LEFT JOIN BookTypes
+ON Books.BookType_ID = BookTypes.ID
+LEFT JOIN BookSize
+ON Books.BookSize_ID = BookSize.ID;
+
+
+
 -- --------------------------------------------------------------------------
 -- PROCEDURE                                                               --
 -- --------------------------------------------------------------------------
@@ -183,5 +195,9 @@ CALL check_books_count(2);
 
 
 -- --------------------------------------------------------------------------
--- PROCEDURE                                                               --
+-- SELECT IN SELECT                                                        --
+-- --------------------------------------------------------------------------
+
+-- --------------------------------------------------------------------------
+-- GROUP BY - HAVING                                                       --
 -- --------------------------------------------------------------------------
