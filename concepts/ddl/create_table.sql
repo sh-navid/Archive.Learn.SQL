@@ -163,3 +163,25 @@ BEGIN
 END;
 CALL get_book_by_id(1);
 CALL get_book_by_id(4);
+
+
+DROP PROCEDURE IF EXISTS check_books_count;
+CREATE PROCEDURE check_books_count (IN max_count INT) 
+BEGIN
+    DECLARE MY_COUNT INT DEFAULT 0;
+
+    SELECT count(*) INTO MY_COUNT
+    FROM Books;
+
+    IF MY_COUNT>max_count THEN
+        SELECT * FROM Books;
+    ELSE
+        SELECT * FROM BookSize;
+    END IF;
+END;
+CALL check_books_count(2);
+
+
+-- --------------------------------------------------------------------------
+-- PROCEDURE                                                               --
+-- --------------------------------------------------------------------------
