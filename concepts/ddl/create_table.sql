@@ -97,24 +97,33 @@ INSERT INTO Books  (ID, Title, ISBN, Published_Date, Publisher_ID, BookType_ID, 
 -- --------------------------------------------------------------------------
 -- INNER JOIN                                                              --
 -- --------------------------------------------------------------------------
-
 -- SELECT Books.Title, Publishers.Name 
 -- FROM Books
 -- INNER JOIN Publishers
 -- ON Books.Publisher_ID = Publishers.ID;
 
+
+-- --------------------------------------------------------------------------
+-- LEFT JOIN                                                               --
+-- --------------------------------------------------------------------------
 -- SELECT Books.Title, Publishers.Name 
 -- FROM Books
 -- LEFT JOIN Publishers
 -- ON Books.Publisher_ID = Publishers.ID;
 
+
+-- --------------------------------------------------------------------------
+-- RIGHT JOIN                                                              --
+-- --------------------------------------------------------------------------
 -- SELECT Books.Title, Publishers.Name 
 -- FROM Books
 -- RIGHT JOIN Publishers
 -- ON Books.Publisher_ID = Publishers.ID;
 
 
-
+-- --------------------------------------------------------------------------
+-- UNION                                                                   --
+-- --------------------------------------------------------------------------
 -- SELECT Books.Title, Publishers.Name 
 -- FROM Books
 -- LEFT JOIN Publishers
@@ -127,20 +136,30 @@ INSERT INTO Books  (ID, Title, ISBN, Published_Date, Publisher_ID, BookType_ID, 
 
 
 
-
+-- --------------------------------------------------------------------------
+-- PROCEDURE                                                               --
+-- --------------------------------------------------------------------------
 DROP PROCEDURE IF EXISTS count_books;
-
-CREATE PROCEDURE count_books (IN B_ID INT) 
+CREATE PROCEDURE count_books () 
 BEGIN
-
-DECLARE C INT DEFAULT 0;
-
-SELECT count(*) INTO C 
-FROM BookSize;
-
+    SELECT count(*)
+    FROM BookSize;
 END;
+CALL count_books();
 
-CALL count_books(2);
 
-SELECT count(*) INTO C 
-FROM BookSize;
+DROP PROCEDURE IF EXISTS get_book_by_id;
+CREATE PROCEDURE get_book_by_id (IN book_id INT) 
+BEGIN
+    IF book_id >3 THEN
+        SELECT Title
+        FROM Books
+        WHERE ID=book_id;
+    ELSE
+        SELECT Title
+        FROM BookSize
+        WHERE ID=book_id;
+    END IF;
+END;
+CALL get_book_by_id(1);
+CALL get_book_by_id(4);
