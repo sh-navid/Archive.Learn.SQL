@@ -226,7 +226,7 @@ SELECT count(*) AS Published_Books, Published_Date FROM Books GROUP BY Published
 -- --------------------------------------------------------------------------
 SELECT Title, BookSize_ID,
 CASE
-    WHEN BookSize_ID==1 THEN "SMALL BOOK"
+    WHEN BookSize_ID =1 THEN "SMALL BOOK"
     WHEN BookSize_ID<>1 THEN "NOT SMALL BOOK"
     ELSE "UNDEFINED"
 END AS MY_BOOK_SIZE
