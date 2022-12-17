@@ -197,7 +197,6 @@ END;
 -- --------------------------------------------------------------------------
 -- SELECT IN SELECT                                                        --
 -- --------------------------------------------------------------------------
-
 SELECT * FROM (SELECT * FROM Books) AS B;
 
 SELECT Title FROM (SELECT * FROM Books) AS B;
@@ -213,7 +212,6 @@ SELECT B.Title FROM (SELECT * FROM Books) AS B WHERE ID IN (SELECT ID FROM Books
 -- --------------------------------------------------------------------------
 -- GROUP BY - HAVING                                                       --
 -- --------------------------------------------------------------------------
-
 SELECT Published_Date FROM Books GROUP BY Published_Date;
 
 SELECT Publisher_ID FROM Books GROUP BY Publisher_ID;
@@ -221,3 +219,15 @@ SELECT Publisher_ID FROM Books GROUP BY Publisher_ID;
 SELECT count(*), Published_Date FROM Books GROUP BY Published_Date;
 
 SELECT count(*) AS Published_Books, Published_Date FROM Books GROUP BY Published_Date HAVING Published_Books>=2;
+
+
+-- --------------------------------------------------------------------------
+-- CASE WHEN                                                               --
+-- --------------------------------------------------------------------------
+SELECT Title, BookSize_ID,
+CASE
+    WHEN BookSize_ID==1 THEN "SMALL BOOK"
+    WHEN BookSize_ID<>1 THEN "NOT SMALL BOOK"
+    ELSE "UNDEFINED"
+END AS MY_BOOK_SIZE
+FROM Books;
