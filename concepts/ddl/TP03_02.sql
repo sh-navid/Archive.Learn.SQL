@@ -1,5 +1,5 @@
 -- --------------------------------------------------------------------------
--- Datatypes
+-- Datatypes - STRINGS
 -- --------------------------------------------------------------------------
 DROP    TABLE IF EXISTS StringA;
 CREATE  TABLE StringA(
@@ -66,5 +66,9 @@ SELECT DISTINCT * FROM EnumType;
 
 DROP    TABLE IF EXISTS EnumType;
 CREATE  TABLE EnumType(
-    s          SET(20,30,40)                        -- Select up to 64 items
+    s          SET('RED','GREEN','BLUE')           -- Select up to 64 items
 );
+INSERT INTO TextTypes VALUES ('RED');
+INSERT INTO TextTypes VALUES ('RED','BLUE');
+SELECT * FROM TextTypes;
+
