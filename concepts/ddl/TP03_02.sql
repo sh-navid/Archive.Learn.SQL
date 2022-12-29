@@ -60,15 +60,18 @@ INSERT INTO EnumType VALUES ("BLUE");
 INSERT INTO EnumType VALUES ("BLUE");
 SELECT * FROM EnumType;
 SELECT DISTINCT * FROM EnumType;
+SELECT * FROM EnumType WHERE e = 'RED';
 
 
 
 
-DROP    TABLE IF EXISTS EnumType;
-CREATE  TABLE EnumType(
-    s          SET('RED','GREEN','BLUE')           -- Select up to 64 items
+DROP    TABLE IF EXISTS SetType;
+CREATE  TABLE SetType(
+    s          SET('RED','GREEN','BLUE')           -- Select up to 64 items - IS CSV ??
 );
-INSERT INTO TextTypes VALUES ('RED');
-INSERT INTO TextTypes VALUES ('RED','BLUE');
-SELECT * FROM TextTypes;
+INSERT INTO SetType VALUES ('RED');
+INSERT INTO SetType VALUES ('RED,BLUE');
+SELECT * FROM SetType;
+SELECT * FROM SetType WHERE FIND_IN_SET( 'BLUE', s ) > 0;
+
 
