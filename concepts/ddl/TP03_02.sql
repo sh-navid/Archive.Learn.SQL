@@ -81,13 +81,21 @@ SELECT * FROM SetType WHERE FIND_IN_SET( 'BLUE', s ) > 0;
 -- --------------------------------------------------------------------------
 DROP    TABLE IF EXISTS BitType;
 CREATE  TABLE BitType(
-    b           BIT            -- Max is 64
+    bi           BIT,            -- Max is 64
+    bo           BOOLEAN
 );
-INSERT INTO BitType VALUES (0);
-INSERT INTO BitType VALUES (1);
+INSERT INTO BitType VALUES (0,False);
+INSERT INTO BitType VALUES (1,True);
 SELECT * FROM BitType;
-SELECT HEX(b) FROM BitType;
-SELECT ORD(b) FROM BitType;
+SELECT HEX(bi),bo FROM BitType;
+
+SELECT ORD(bi),bo,
+CASE
+    WHEN bo =1 THEN "TRUE"
+    WHEN bo<>1 THEN "FALSE"
+    ELSE "UNDEFINED"
+END AS B
+FROM BitType;
 
 
 
