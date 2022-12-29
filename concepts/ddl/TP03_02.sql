@@ -67,7 +67,7 @@ SELECT * FROM EnumType WHERE e = 'RED';
 
 DROP    TABLE IF EXISTS SetType;
 CREATE  TABLE SetType(
-    s          SET('RED','GREEN','BLUE')           -- Select up to 64 items - IS CSV ??
+    s          SET('RED','GREEN','BLUE')          -- Select up to 64 items - IS CSV ??
 );
 INSERT INTO SetType VALUES ('RED');
 INSERT INTO SetType VALUES ('RED,BLUE');
@@ -99,10 +99,10 @@ CREATE  TABLE IntTypes(
     i2u         INTEGER     UNSIGNED,   --  0,          4294967295
     i3          SMALLINT,               -- -32768, 32767
     i3u         SMALLINT    UNSIGNED,   --  0,     65535
-    i4          MEDIUMINT,              -- 
-    i4u         MEDIUMINT   UNSIGNED,   -- 
-    i5          BIGINT,                 -- 
-    i5u         BIGINT      UNSIGNED    -- 
+    i4          MEDIUMINT,              -- -8388608, 8388607
+    i4u         MEDIUMINT   UNSIGNED,   --  0,       16777215
+    i5          BIGINT,                 -- -9223372036854775808, 9223372036854775807
+    i5u         BIGINT      UNSIGNED    --  0,                   18446744073709551615
 );
 -- INSERT INTO IntTypes VALUES ("A","A","A","A");
 SELECT * FROM IntTypes;
