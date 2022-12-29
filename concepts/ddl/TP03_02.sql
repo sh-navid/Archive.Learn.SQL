@@ -6,7 +6,6 @@ CREATE  TABLE StringA(
     c           CHAR(1),            -- Max is 255
     b           BINARY(1)           -- Max is 255, Just like CHAR but stores BINARY
 );
-
 INSERT INTO StringA VALUES ("A","A");
 SELECT * FROM StringA;
 
@@ -18,7 +17,6 @@ CREATE  TABLE StringB(
     vc          VARCHAR(3000),      -- Max is 65536
     vb          VARBINARY(3000)     -- Max is 65536, Just like CHAR but stores BINARY
 );
-
 INSERT INTO StringB VALUES ("A","A");
 SELECT * FROM StringB;
 
@@ -32,7 +30,6 @@ CREATE  TABLE BlobTypes(
     b3          MEDIUMBLOB,        -- Max is 16,777,215     bytes of data   
     b4          LONGBLOB           -- Max is 4,294,967,295  bytes of data  
 );
-
 INSERT INTO BlobTypes VALUES ("A","A","A","A");
 SELECT * FROM BlobTypes;
 
@@ -46,6 +43,28 @@ CREATE  TABLE TextTypes(
     t3          MEDIUMTEXT,        -- Max is 16,777,215     length of text
     t4          LONGTEXT           -- Max is 4,294,967,295  length of text
 );
-
 INSERT INTO TextTypes VALUES ("A","A","A","A");
 SELECT * FROM TextTypes;
+
+
+
+
+DROP    TABLE IF EXISTS EnumType;
+CREATE  TABLE EnumType(
+    e          ENUM('RED','GREEN','BLUE')          -- Select one from 65535 defined items
+);
+INSERT INTO EnumType VALUES ("RED");
+INSERT INTO EnumType VALUES ("YELLOW");
+INSERT INTO EnumType VALUES ("BLUE");
+INSERT INTO EnumType VALUES ("BLUE");
+INSERT INTO EnumType VALUES ("BLUE");
+SELECT * FROM EnumType;
+SELECT DISTINCT * FROM EnumType;
+
+
+
+
+DROP    TABLE IF EXISTS EnumType;
+CREATE  TABLE EnumType(
+    s          SET(20,30,40)                        -- Select up to 64 items
+);
