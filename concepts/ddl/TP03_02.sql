@@ -114,3 +114,17 @@ CREATE  TABLE IntTypes(
 );
 -- INSERT INTO IntTypes VALUES ("A","A","A","A");
 SELECT * FROM IntTypes;
+
+
+
+
+DROP    TABLE IF EXISTS FloatType;
+CREATE  TABLE FloatType(
+    f1           FLOAT(7,5),            -- 32bit
+    f2           FLOAT(3),              -- 0 to 24 is float, 25 to 53 is double
+    d1           DOUBLE(7,5),           -- 64bit, (7 digits, 5 decimal) - not the same as DECIMAL - seems better not use it for financial data.
+    d2           DECIMAL(6,5)           -- Fixed point - 0.0001 to 99.9999
+);
+
+INSERT INTO FloatType VALUES (1,1,1,1);
+SELECT * FROM FloatType;
