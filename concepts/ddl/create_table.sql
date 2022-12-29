@@ -8,7 +8,6 @@ DROP TABLE IF EXISTS Publishers;
 DROP TABLE IF EXISTS BookTypes;
 DROP TABLE IF EXISTS BookSize;
 
-
 -- --------------------------------------------------------------------------
 -- CREATE                                                                  --
 -- --------------------------------------------------------------------------
