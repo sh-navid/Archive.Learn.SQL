@@ -75,3 +75,34 @@ SELECT * FROM SetType;
 SELECT * FROM SetType WHERE FIND_IN_SET( 'BLUE', s ) > 0;
 
 
+
+-- --------------------------------------------------------------------------
+-- Datatypes - Numeric
+-- --------------------------------------------------------------------------
+DROP    TABLE IF EXISTS BitType;
+CREATE  TABLE BitType(
+    b           BIT            -- Max is 64
+);
+INSERT INTO BitType VALUES (0);
+INSERT INTO BitType VALUES (1);
+SELECT * FROM BitType;
+SELECT HEX(b) FROM BitType;
+SELECT ORD(b) FROM BitType;
+
+
+
+DROP    TABLE IF EXISTS IntTypes;
+CREATE  TABLE IntTypes(
+    i1          TINYINT,                -- -128, 127
+    i1u         TINYINT     UNSIGNED,   --  0,   255
+    i2          INTEGER,                -- -2147483648, 2147483647
+    i2u         INTEGER     UNSIGNED,   --  0,          4294967295
+    i3          SMALLINT,               -- -32768, 32767
+    i3u         SMALLINT    UNSIGNED,   --  0,     65535
+    i4          MEDIUMINT,              -- 
+    i4u         MEDIUMINT   UNSIGNED,   -- 
+    i5          BIGINT,                 -- 
+    i5u         BIGINT      UNSIGNED    -- 
+);
+-- INSERT INTO IntTypes VALUES ("A","A","A","A");
+SELECT * FROM IntTypes;
