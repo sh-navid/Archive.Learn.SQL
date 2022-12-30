@@ -82,7 +82,7 @@ CREATE TABLE Orders(
     ID          INTEGER unsigned    PRIMARY KEY auto_increment, 
     Value       VARCHAR(30),
     UserID      INTEGER unsigned,
-    FOREIGN KEY (UserID) REFERENCES Users(ID) ON DELETE CASCADE ON UPDATE CASCADE
+    -- --------------------------------------------------------------------------
 );
 
 INSERT INTO Gender VALUES(1, "M");
