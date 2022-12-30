@@ -99,18 +99,41 @@ FROM BitType;
 
 
 
+-- --------------------------------------------------------------------------
+-- --------------------------------------------------------------------------
+-- NEW COURCE
+-- --------------------------------------------------------------------------
+-- --------------------------------------------------------------------------
+
+
+
+CREATE  TABLE Tasks(
+    ID              INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    Days            BIT(7),
+    Task            VARCHAR(200)
+);
+INSERT INTO Tasks VALUES (1,B'1100110','Buy soda');
+INSERT INTO Tasks VALUES (2,B'0100111','Meeting with ...');
+INSERT INTO Tasks VALUES (3,B'0101010','Go to GYM');
+SELECT * FROM Tasks;
+SELECT BIN(Days) FROM Tasks;
+SELECT Task, REVERSE(EXPORT_SET(days,'1','0','',7)) FROM Tasks;
+SELECT Task, REVERSE(EXPORT_SET(days,'*',' ',' ',7)) AS S_S_M_T_W_T_F FROM Tasks;
+
+
+
 DROP    TABLE IF EXISTS IntTypes;
 CREATE  TABLE IntTypes(
-    i1          TINYINT,                -- -128, 127
-    i1u         TINYINT     UNSIGNED,   --  0,   255
-    i2          INTEGER,                -- -2147483648, 2147483647
-    i2u         INTEGER     UNSIGNED,   --  0,          4294967295
-    i3          SMALLINT,               -- -32768, 32767
-    i3u         SMALLINT    UNSIGNED,   --  0,     65535
-    i4          MEDIUMINT,              -- -8388608, 8388607
-    i4u         MEDIUMINT   UNSIGNED,   --  0,       16777215
-    i5          BIGINT,                 -- -9223372036854775808, 9223372036854775807
-    i5u         BIGINT      UNSIGNED    --  0,                   18446744073709551615
+    i1          TINYINT,                -- -128,                    127
+    i1u         TINYINT     UNSIGNED,   --  0,                      255
+    i2          INTEGER,                -- -2147483648,             2147483647
+    i2u         INTEGER     UNSIGNED,   --  0,                      4294967295
+    i3          SMALLINT,               -- -32768,                  32767
+    i3u         SMALLINT    UNSIGNED,   --  0,                      65535
+    i4          MEDIUMINT,              -- -8388608,                8388607
+    i4u         MEDIUMINT   UNSIGNED,   --  0,                      16777215
+    i5          BIGINT,                 -- -9223372036854775808,    9223372036854775807
+    i5u         BIGINT      UNSIGNED    --  0,                      18446744073709551615
 );
 -- INSERT INTO IntTypes VALUES ("A","A","A","A");
 SELECT * FROM IntTypes;
@@ -120,11 +143,55 @@ SELECT * FROM IntTypes;
 
 DROP    TABLE IF EXISTS FloatType;
 CREATE  TABLE FloatType(
-    f1           FLOAT(7,5),            -- 32bit
+    f1           FLOAT(7,5),            -- 4 bytes (32bit)
     f2           FLOAT(3),              -- 0 to 24 is float, 25 to 53 is double
-    d1           DOUBLE(7,5),           -- 64bit, (7 digits, 5 decimal) - not the same as DECIMAL - seems better not use it for financial data.
+    d1           DOUBLE(7,5),           -- 8 bytes (64bit)
+                                        -- 7 digits, 5 decimal
+                                        -- Not the same as DECIMAL
+                                        -- Seems better not use it for financial data
     d2           DECIMAL(6,5)           -- Fixed point - 0.0001 to 99.9999
 );
 
 INSERT INTO FloatType VALUES (1,1,1,1);
+INSERT INTO FloatType VALUES (2,2,2,2);
 SELECT * FROM FloatType;
+SELECT FORMAT(f1,3),FORMAT(f2,4) FROM FloatType;
+
+
+
+-- --------------------------------------------------------------------------
+-- UNSIGNED for FLOAT and DOUBLE
+-- --------------------------------------------------------------------------
+-- Starting from MySQL version 8.0.17, UNSIGNED is deprecated for the FLOAT a
+-- nd DOUBLE data types. (https://blog.devart.com/mysql-data-types.html)
+
+
+
+-- --------------------------------------------------------------------------
+-- How to store phone number
+-- --------------------------------------------------------------------------
+-- For a phone number in MySQL, VARCHAR is more preferable to integers as som
+-- etimes there may be special symbols or characters. In addition, VARCHAR si
+-- mplifies validation. (https://blog.devart.com/mysql-data-types.html)
+
+
+
+-- --------------------------------------------------------------------------
+-- CHAR vs VARCHAR
+-- --------------------------------------------------------------------------
+
+
+
+-- --------------------------------------------------------------------------
+-- TEXT vs VARCHAR
+-- --------------------------------------------------------------------------
+
+
+
+-- --------------------------------------------------------------------------
+-- WHEN TO USE FLOAT, DOUBLE OR DECIMAL
+-- --------------------------------------------------------------------------
+-- To sum up, decimals are better to use for fixed amounts, such as monetary 
+-- and financial information (price, salary, etc,), while float and double – 
+-- for approximate calculations where rounding values might have a negative i
+-- mpact. (https://blog.devart.com/mysql-data-types.html)
