@@ -141,33 +141,92 @@ SELECT * FROM IntTypes;
 
 
 
+DROP    TABLE IF EXISTS ZeroFilledTable;
+CREATE  TABLE ZeroFilledTable(
+    i1           INTEGER,
+    i2           INTEGER    ZEROFILL             
+);
+INSERT INTO ZeroFilledTable VALUES (10,10);
+INSERT INTO ZeroFilledTable VALUES (20,20);
+SELECT * FROM ZeroFilledTable;
+
+
+
 DROP    TABLE IF EXISTS FloatType;
 CREATE  TABLE FloatType(
-    f1           FLOAT(7,5),            -- 4 bytes (32bit)
-    f2           FLOAT(3),              -- 0 to 24 is float, 25 to 53 is double
-    d1           DOUBLE(7,5),           -- 8 bytes (64bit)
-                                        -- 7 digits, 5 decimal
+    -- FLOATING-POINT NUMBERS
+    f1           FLOAT(7,5),            -- 4 bytes (32bit)  - (7) total number of digits, (5) number of digits after the decimal point
+    f2           FLOAT(5),              -- 0 to 24 is float, 25 to 53 is double
+    d1           DOUBLE(7,5),           -- 8 bytes (64bit)  - (7) total number of digits, (5) number of digits after the decimal point
                                         -- Not the same as DECIMAL
                                         -- Seems better not use it for financial data
-    d2           DECIMAL(6,5)           -- Fixed point - 0.0001 to 99.9999
+    -- FIXED-POINT NUMBERS
+    d2           DECIMAL(7,5)           -- (7) total number of digits, (5) number of digits after the decimal point
+                                        -- Max number for first parameter is 65
+                                        -- Max number for second parameter is 30
+                                        -- Default id DECIMAL(10,0)
 );
+-- [More on double vs decimal]
+-- https://stackoverflow.com/questions/6831217/double-vs-decimal-in-mysql
 
 INSERT INTO FloatType VALUES (1,1,1,1);
 INSERT INTO FloatType VALUES (2,2,2,2);
+INSERT INTO FloatType VALUES (22.20010,   22.20010,    22.20010,      22.20010);
+INSERT INTO FloatType VALUES (1.11,           1.11,        1.11,          1.11);
+INSERT INTO FloatType VALUES (1.110009,   1.110009,    1.110009,      1.110009);
 SELECT * FROM FloatType;
 SELECT FORMAT(f1,3),FORMAT(f2,4) FROM FloatType;
+SELECT FORMAT(f1,2),FORMAT(f2,2),FORMAT(d1,2),FORMAT(d2,2) FROM FloatType;
 
 
 
 -- --------------------------------------------------------------------------
 -- Datatypes - Data and Time
 -- --------------------------------------------------------------------------
+DROP    TABLE IF EXISTS TimeTable;
+CREATE  TABLE TimeTable(
+    -- FLOATING-POINT NUMBERS
+    d            DATE,
+    dt           DATETIME,
+    ts           TIMESTAMP,
+    t            TIME,
+    y            YEAR
+);
+INSERT INTO TimeTable VALUES (NOW(),NOW(),NOW(),NOW(),NOW());
+INSERT INTO TimeTable VALUES (NOW(),NOW(),CURRENT_TIMESTAMP,NOW(),NOW());
+SELECT * FROM TimeTable;
+
 
 
 
 -- --------------------------------------------------------------------------
 -- Datatypes - JSON
 -- --------------------------------------------------------------------------
+DROP    TABLE IF EXISTS JSONTable;
+CREATE  TABLE JSONTable(
+    -- FLOATING-POINT NUMBERS
+    j            JSON
+);
+INSERT INTO JSONTable VALUES ('{"color":"white","code":"#ffffff"}');
+INSERT INTO JSONTable VALUES ('{"color":"black","code":"#000000"}');
+SELECT j AS JSON,j->"$.color" AS Color FROM JSONTable;
+SELECT j AS JSON,j->"$.color" AS Color FROM JSONTable WHERE JSON_EXTRACT(j,"$.color")="white";
+
+
+
+
+-- --------------------------------------------------------------------------
+-- Timestamp
+-- --------------------------------------------------------------------------
+-- TIMESTAMP values are stored as the number of seconds since the Unix epoch 
+-- ('1970-01-01 00:00:00' UTC)
+-- (https://www.w3schools.com/MySQL/mysql_datatypes.asp)
+--
+-- TIMESTAMP is four bytes vs eight bytes for DATETIME.
+-- Timestamps are also lighter on the database and indexed faster.
+-- TIMESTAMP affected by different TIME ZONE related setting. DATETIME is constant.
+-- (https://stackoverflow.com/questions/409286/should-i-use-the-datetime-or-timestamp-data-type-in-mysql)
+
 
 
 
@@ -201,9 +260,14 @@ SELECT FORMAT(f1,3),FORMAT(f2,4) FROM FloatType;
 
 
 -- --------------------------------------------------------------------------
--- Should ID be BigInteger?
+-- Should ID as a Primary Key be BigInt?
 -- --------------------------------------------------------------------------
-
+-- Primary keys should be unsigned
+-- You can use BIGINT as a primary key
+-- Using BIGINT as a primary key (or any index) will add size to the index
+-- This can have a performance impact on searching the index and make it slow
+-- -- er to run queries
+-- (https://superuser.com/questions/390293/is-there-some-issue-in-have-bigint-column-as-primary-key-on-mysql)
 
 
 -- --------------------------------------------------------------------------
