@@ -18,7 +18,7 @@ SELECT * FROM Users;
 
 
 -- --------------------------------------------------------------------------
--- Constraints - Default
+-- Constraints - Default, Not Null
 -- --------------------------------------------------------------------------
 
 DROP   TABLE IF EXISTS Users;
@@ -101,3 +101,7 @@ SELECT * FROM Orders;
 DELETE FROM Users WHERE ID=1;
 SELECT * FROM Users;
 SELECT * FROM Orders;
+
+-- --------------------------------------------------------------------------
+-- Constraints - Create Index
+-- --------------------------------------------------------------------------
