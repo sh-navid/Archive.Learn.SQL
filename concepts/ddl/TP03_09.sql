@@ -70,18 +70,6 @@ SELECT TRUNCATE(N,1), TRUNCATE(N,2), TRUNCATE(N,3) FROM (SELECT 12.4561 AS N) AS
 -- --------------------------------------------------------------------------
 -- Date Functions
 -- --------------------------------------------------------------------------
-DROP    TABLE IF EXISTS TimeTable;
-CREATE  TABLE TimeTable(
-    d            DATE,
-    dt           DATETIME,
-    ts           TIMESTAMP,
-    t            TIME,
-    y            YEAR
-);
-INSERT INTO TimeTable VALUES (NOW(),NOW(),NOW(),NOW(),NOW());
-SELECT * FROM TimeTable;
-
-
 SELECT CURRENT_DATE, CURRENT_TIME, CURRENT_TIMESTAMP, NOW();
 
 
@@ -112,16 +100,35 @@ SELECT NOW(),ADDTIME(NOW(),"2"); -- 2 seconds
 SELECT NOW(),ADDTIME(NOW(),"2:2:2"); -- 2 hours, 2 minutes, 2 seconds
 
 
-SELECT Date(NOW()); -- Extract Date Part
+SELECT DATE(NOW()), YEAR(NOW()), MONTH(NOW()), DAY(NOW());
+
+
+SELECT HOUR(NOW()), MINUTE(NOW()), SECOND(NOW());
 
 
 SELECT DATEDIFF("2020-02-02","2020-03-02");
 
 
-SELECT DATE_FORMAT(NOW(),"%Y (%y) - %M (%m) - %W (%w) - %p - %j");
+SELECT DATE_FORMAT(NOW(), "%Y (%y) - %M (%m) - %W (%w) - %p - %j");
+SELECT TIME_FORMAT(NOW(), "%H");
 
 
 SELECT NOW(),SUBDATE(NOW(),INTERVAL 10  DAY);
 
 
+SELECT DAYNAME(NOW());
 
+
+SELECT  DAYOFYEAR(NOW()), DAYOFMONTH(NOW()), DAYOFWEEK(NOW());
+
+
+SELECT NOW(),EXTRACT(DAY FROM NOW());
+SELECT NOW(),EXTRACT(YEAR FROM NOW());
+SELECT NOW(),EXTRACT(MONTH FROM NOW());
+
+
+SELECT LAST_DAY(NOW()), MONTHNAME(NOW());
+
+
+SELECT TIME_TO_SEC("0:1:30");
+SELECT SEC_TO_TIME(90);
