@@ -185,7 +185,6 @@ SELECT FORMAT(f1,2),FORMAT(f2,2),FORMAT(d1,2),FORMAT(d2,2) FROM FloatType;
 -- --------------------------------------------------------------------------
 DROP    TABLE IF EXISTS TimeTable;
 CREATE  TABLE TimeTable(
-    -- FLOATING-POINT NUMBERS
     d            DATE,
     dt           DATETIME,
     ts           TIMESTAMP,
@@ -204,7 +203,6 @@ SELECT * FROM TimeTable;
 -- --------------------------------------------------------------------------
 DROP    TABLE IF EXISTS JSONTable;
 CREATE  TABLE JSONTable(
-    -- FLOATING-POINT NUMBERS
     j            JSON
 );
 INSERT INTO JSONTable VALUES ('{"color":"white","code":"#ffffff"}');
