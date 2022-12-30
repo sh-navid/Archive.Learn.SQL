@@ -3,13 +3,13 @@
 -- --------------------------------------------------------------------------
 DROP TABLE IF EXISTS Test;
 CREATE TABLE Test(
-    ID      INT,
+    ID      INT PRIMARY KEY AUTO_INCREMENT,
     Val     VARCHAR(200),
     F       FLOAT
 );
-INSERT INTO Test VALUES(1,"Hello",14);
-INSERT INTO Test VALUES(1,"Goodbye",25.00001);
-INSERT INTO Test VALUES(1,"Hi",25.00001);
+INSERT INTO Test VALUES(NULL,"Hello",14);
+INSERT INTO Test VALUES(NULL,"Goodbye",25.00001);
+INSERT INTO Test VALUES(NULL,"Hi",25.00001);
 
 SELECT * FROM Test;
 
@@ -148,3 +148,5 @@ SELECT ASCII("A"), ORD("A");
 SELECT CAST(NOW() AS TIME), CAST(NOW() AS DATE), CAST(NOW() AS CHAR);
 
 SELECT CONV(1110,2,10),CONV(1110,2,16); -- Convert from base 2 to base 10 or 16
+
+SELECT LAST_INSERT_ID() FROM Test LIMIT 1;
