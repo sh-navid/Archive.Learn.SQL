@@ -132,3 +132,19 @@ SELECT LAST_DAY(NOW()), MONTHNAME(NOW());
 
 SELECT TIME_TO_SEC("0:1:30");
 SELECT SEC_TO_TIME(90);
+
+
+SELECT TIMEDIFF("1:20:00","2:30:00");
+
+
+-- --------------------------------------------------------------------------
+-- Other Functions
+-- --------------------------------------------------------------------------
+
+SELECT BIN(10), HEX(10), OCT(10);
+
+SELECT ASCII("A"), ORD("A");
+
+SELECT CAST(NOW() AS TIME), CAST(NOW() AS DATE), CAST(NOW() AS CHAR);
+
+SELECT CONV(1110,2,10),CONV(1110,2,16); -- Convert from base 2 to base 10 or 16
