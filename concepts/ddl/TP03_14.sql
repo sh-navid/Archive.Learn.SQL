@@ -1,3 +1,12 @@
 -- --------------------------------------------------------------------------
 -- Speak about cloth store
 -- --------------------------------------------------------------------------
+-- CTE (Common Table Expressions)
+-- --------------------------------------------------------------------------
+-- Kinds of Keys, Composite
+-- NF 1,2,3
+-- Row to Column
+-- Orderby Having Question ...
+-- 3pl join
+-- Self join
+-- Cross join 
