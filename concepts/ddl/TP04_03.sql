@@ -1,3 +1,7 @@
 -- --------------------------------------------------------------------------
 -- MYSQL Workbench - SHOW ERD FROM SQL                                     --
 -- --------------------------------------------------------------------------
+-- Show Create Tables IN ERD
+-- Make ERD From Script -> Reversed Eng
+-- Make Script From ERD -> Forward Eng - Right Click Copy to Clip board
+-- Show Trigger In Work Bench
