@@ -3,10 +3,10 @@
 -- --------------------------------------------------------------------------
 -- CTE (Common Table Expressions)
 -- --------------------------------------------------------------------------
--- Kinds of Keys, Composite
+-- Kinds of Keys, Composite         --- OK
 -- NF 1,2,3
 -- Row to Column
 -- Orderby Having Question ...
--- 3pl join
+-- 3pl join                         --- OK
 -- Self join
 -- Cross join 
