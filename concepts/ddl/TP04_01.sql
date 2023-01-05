@@ -45,13 +45,15 @@ CREATE INDEX my_index_2 ON Record(Value);
 
 -- --------------------------------------------------------
 -- Composite Primary Key, Other types [Foreign, Primary, Unique]
+-- -- Constraints - Default, Not Null
+-- -- Constraints - Primary Key 
 -- --------------------------------------------------------
 DROP TABLE IF EXISTS Record;
 CREATE TABLE Record(
     V1      VARCHAR(50),
     V2      VARCHAR(50),
     V3      VARCHAR(50) DEFAULT NULL,
-    PRIMARY KEY(V1,V2)
+    PRIMARY KEY(V1,V2) -- Composite Primary Key
 );
 
 -- ALTER TABLE Record ADD PRIMARY KEY (V1,V2);
@@ -99,3 +101,19 @@ CREATE VIEW RecordView AS
 SELECT V1 AS VALUE_1 FROM Record;
 
 SELECT * FROM RecordView;
+
+-- --------------------------------------------------------
+-- Constraints - Check
+-- --------------------------------------------------------
+
+DROP   TABLE IF EXISTS Users;
+CREATE TABLE Users( 
+    ID          INTEGER unsigned    PRIMARY KEY auto_increment, 
+    First       VARCHAR(30),
+    Last        VARCHAR(30),
+    CONSTRAINT check_name_len CHECK (LENGTH(First)>2 AND LENGTH(Last)>2)     
+);
+
+INSERT INTO Users VALUES(NULL, "Ali", "Ali");
+INSERT INTO Users VALUES(NULL, "Al", "Al");
+SELECT * FROM Users;
