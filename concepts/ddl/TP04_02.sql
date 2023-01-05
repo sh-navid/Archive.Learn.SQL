@@ -18,7 +18,10 @@ CREATE TABLE IF NOT EXISTS Book(
 
     PRIMARY KEY (ID),
     FOREIGN KEY (Author_ID)  REFERENCES  Author(ID) -- ON DELETE CASCADE ON UPDATE CASCADE,
+                                                    -- CASCADE, RESTRICT, SET NULL, NO ACTION
 );
+
+
 
 
 
