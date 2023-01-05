@@ -44,7 +44,7 @@ SELECT DISTINCT(Value) FROM Record;
 CREATE INDEX my_index_2 ON Record(Value);
 
 -- --------------------------------------------------------
--- Composite Primary Key 
+-- Composite Primary Key, Other types [Foreign, Primary, Unique]
 -- --------------------------------------------------------
 DROP TABLE IF EXISTS Record;
 CREATE TABLE Record(
@@ -62,7 +62,7 @@ INSERT INTO Record VALUES ("H","H",NULL);
 SELECT * FROM Record;
 
 -- --------------------------------------------------------
--- Where
+-- Where, Alias, IN, LIKE, Order By
 -- --------------------------------------------------------
 INSERT INTO Record VALUES ("Hi","Hello",DEFAULT);
 INSERT INTO Record VALUES ("Hi","Hey",DEFAULT);
@@ -74,12 +74,28 @@ SELECT * FROM Record WHERE V1 LIKE "_i" OR V2 LIKE "H*"; -- IN, LIKE, BETWEEN, =
 
 SELECT * FROM Record WHERE 1=1 ORDER BY V2 ASC; -- ASC|DESC
 
+SELECT V3 AS VALUE_3 FROM Record WHERE V3 IN ("ABC","DDD");
+
 -- --------------------------------------------------------
--- Null
+-- Null, Limit
 -- --------------------------------------------------------
-SELECT * FROM Record WHERE V3 IS NULL;
+SELECT * FROM Record WHERE V3 IS NULL LIMIT 1;
 SELECT * FROM Record WHERE V3 IS NOT NULL;
 
 -- --------------------------------------------------------
 -- Update/Delete
 -- --------------------------------------------------------
+UPDATE Record SET V3="@" WHERE V3 IS NULL;
+SELECT * FROM Record;
+
+DELETE FROM Record WHERE V3 = "@";
+SELECT * FROM Record;
+
+-- --------------------------------------------------------
+-- VIEW
+-- --------------------------------------------------------
+DROP VIEW IF EXISTS RecordView;
+CREATE VIEW RecordView AS
+SELECT V1 AS VALUE_1 FROM Record;
+
+SELECT * FROM RecordView;
