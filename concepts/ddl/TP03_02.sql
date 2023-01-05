@@ -98,15 +98,6 @@ END AS B
 FROM BitType;
 
 
-
--- --------------------------------------------------------------------------
--- --------------------------------------------------------------------------
--- NEW COURCE
--- --------------------------------------------------------------------------
--- --------------------------------------------------------------------------
-
-
-
 CREATE  TABLE Tasks(
     ID              INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     Days            BIT(7),
@@ -120,6 +111,12 @@ SELECT BIN(Days) FROM Tasks;
 SELECT Task, REVERSE(EXPORT_SET(days,'1','0','',7)) FROM Tasks;
 SELECT Task, REVERSE(EXPORT_SET(days,'*',' ',' ',7)) AS S_S_M_T_W_T_F FROM Tasks;
 
+
+-- --------------------------------------------------------------------------
+-- --------------------------------------------------------------------------
+-- NEW COURCE
+-- --------------------------------------------------------------------------
+-- --------------------------------------------------------------------------
 
 
 DROP    TABLE IF EXISTS IntTypes;
@@ -196,6 +193,17 @@ INSERT INTO TimeTable VALUES (NOW(),NOW(),CURRENT_TIMESTAMP,NOW(),NOW());
 SELECT * FROM TimeTable;
 
 
+
+DROP    TABLE IF EXISTS MyTimeTable;
+CREATE  TABLE MyTimeTable(
+    ID      INT     NOT     NULL    PRIMARY KEY,
+    Name    VARCHAR(200),
+    Created           TIMESTAMP     DEFAULT CURRENT_TIMESTAMP,
+    Updated           TIMESTAMP     DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+INSERT INTO MyTimeTable VALUES (1,"AAA",DEFAULT,DEFAULT);
+INSERT INTO MyTimeTable VALUES (2,"BBB",DEFAULT,DEFAULT);
+SELECT * FROM MyTimeTable; 
 
 
 -- --------------------------------------------------------------------------
